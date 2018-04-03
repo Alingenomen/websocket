@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -34,9 +37,9 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onMessage(WebSocket webSocket, String text) {
-            Log.d("onmessage",text);
-            output("Receiving : " + text);
-
+            // Log.d("onmessage",text);
+            // output("Receiving : " + text);
+            parseJsonObject(text);
         }
 
         @Override
@@ -88,5 +91,20 @@ public class MainActivity extends AppCompatActivity {
                 output.setText(txt);
             }
         });
+    }
+
+    private void parseJsonObject(String jsonString){
+        Log.d("onmessage",jsonString);
+
+        try {
+            JSONObject jObj = new JSONObject(jsonString);
+            String timestamp = jObj.getString("time");
+            Double strikeLat = jObj.getDouble("lat");
+            Double strikeLon = jObj.getDouble("lon");
+
+            output("Strike timestamp: " + timestamp + ", Latitude: " + strikeLat.toString() + ", Longitude: " + strikeLon);
+        } catch (JSONException e) {
+            Log.e("Jsonparsing", "unexpected JSON exception", e);
+        }
     }
 }

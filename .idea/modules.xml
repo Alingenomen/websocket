@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MyApplication.iml" filepath="$PROJECT_DIR$/MyApplication.iml" />
+      <module fileurl="file://C:\Users\DTPAdmin\Desktop\Dzengiz\Android\websocket\MyApplication.iml" filepath="C:\Users\DTPAdmin\Desktop\Dzengiz\Android\websocket\MyApplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\DTPAdmin\Desktop\Dzengiz\Android\websocket\app\app.iml" filepath="C:\Users\DTPAdmin\Desktop\Dzengiz\Android\websocket\app\app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/websocket.iml" filepath="$PROJECT_DIR$/websocket.iml" />
     </modules>
   </component>
 </project>
